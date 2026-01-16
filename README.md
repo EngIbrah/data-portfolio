@@ -1,16 +1,97 @@
-# React + Vite
+# 🚀 Data Science & Machine Learning Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive **React portfolio** showcasing my work as a **Data Scientist & Machine Learning Engineer**, with strong foundations in **full-stack development (MERN)**.  
+Designed to highlight real-world projects, technical skills, and professional experience in a clean, recruiter-friendly way.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧠 About the Portfolio
 
-## React Compiler
+This portfolio is built to **bridge data science and software engineering**, demonstrating how machine learning models, data analysis, and scalable web applications come together in production-ready systems.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Key goals of this portfolio:**
+- Showcase **data science & ML projects**
+- Highlight **real-world problem solving**
+- Demonstrate **clean UI, UX, and responsive design**
+- Make it easy for **recruiters and clients** to explore my work
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖥 Portfolio UI Preview
+
+### Desktop Experience
+> Clean layout, glassmorphism UI, and clear project presentation
+
+![Hero Section – Data Science & ML Portfolio](screenshots/hero.png)
+*Hero section with professional branding and specialization focus*
+
+![Projects Section](screenshots/projects.png)
+*Projects section with GitHub links and technology stack*
+
+![Experience Section](screenshots/experience.png)
+*Professional experience timeline*
+
+---
+
+### 📱 Mobile Responsive View
+> Fully responsive across all screen sizes
+
+![Mobile Portfolio View](screenshots/mobile.png)
+
+---
+
+## 🌐 Live Portfolio
+
+[![Live Portfolio](screenshots/hero.png)](https://your-portfolio-link.com)
+
+
+## ✨ Features
+
+- ⚛️ **React + Vite** modern frontend stack  
+- 🎨 **Tailwind CSS** with glassmorphism & animations  
+- 📊 Dedicated **Data Science & ML project section**  
+- 🔗 **GitHub integration** (repo links per project)  
+- 📬 **EmailJS contact form** (no backend required)  
+- 📱 Fully **responsive design**  
+- 🌙 Elegant dark UI with smooth transitions  
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **React**
+- **Vite**
+- **Tailwind CSS**
+- **Lucide Icons**
+
+### Data Science & ML (Showcased Projects)
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- TensorFlow / PyTorch
+- Data Visualization
+
+### Tooling & Deployment
+- Git & GitHub
+- EmailJS
+- Vercel / Netlify
+
+---
+
+## 📂 Project Structure
+
+```text
+├── public/
+│   └── screenshots/
+│       ├── hero.png
+│       ├── projects.png
+│       ├── experience.png
+│       └── mobile.png
+├── src/
+│   ├── components/
+│   ├── sections/
+│   ├── pages/
+│   └── styles/
+├── README.md
+└── package.json
