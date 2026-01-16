@@ -36,13 +36,13 @@ This portfolio is built to **bridge data science and software engineering**, dem
 ### 📱 Mobile Responsive View
 > Fully responsive across all screen sizes
 
-![Mobile Portfolio View](screenshots/mobile.png)
+![Mobile Portfolio View](screenshots/mobile.jpg)
 
 ---
 
 ## 🌐 Live Portfolio
 
-[![Live Portfolio](screenshots/hero.png)](https://your-portfolio-link.com)
+[![Live Portfolio](Click here for live demo)](https://ibrah-port.vercel.app/)
 
 
 ## ✨ Features
