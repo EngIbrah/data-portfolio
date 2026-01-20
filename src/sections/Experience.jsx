@@ -11,7 +11,7 @@ const experiences = [
   {
     period: "Feb 2024 — Jun 2024",
     role: "ICT & Data Intern",
-    company: "KUWASA (Kigamboni Water Supply and Sanitation Authority)",
+    company: "KUWASA (Kigoma Urban Water Supply and Sanitation Authority)",
     description:
       "Supported ICT operations and data-related tasks including data cleaning, reporting, and system support. Assisted in analyzing operational data to improve internal processes and service delivery.",
     technologies: ["Python", "Excel", "Data Cleaning", "Reporting", "ICT Support"],
