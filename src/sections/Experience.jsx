@@ -1,15 +1,6 @@
 const experiences = [
   {
-    period: "Jul 2024 — Sep 2024",
-    role: "Data Analyst Intern",
-    company: "TANESCO (Tanzania Electric Supply Company)",
-    description:
-      "Worked on data analysis projects focused on customer service operations. Analyzed customers with delayed or incomplete payments, identified trends affecting service access, and delivered insights to support operational decision-making.",
-    technologies: ["Python", "SQL", "Excel", "Power BI", "Data Analysis"],
-    current: false,
-  },
-  {
-    period: "Feb 2024 — Jun 2024",
+    period: "jun 2025 — nov 2025",
     role: "ICT & Data Intern",
     company: "KUWASA (Kigoma Urban Water Supply and Sanitation Authority)",
     description:
@@ -18,16 +9,26 @@ const experiences = [
     current: false,
   },
   {
-    period: "2023 — Present",
+    period: "jun 2024 — nov 2024",
     role: "Full-Stack Developer (Project-Based)",
     company: "AMANZI App",
     description:
       "Contributed to the development of a water-service management application. Built and maintained frontend and backend features, integrated APIs, and supported data-driven functionalities for service monitoring.",
     technologies: ["React", "Node.js", "MongoDB", "REST APIs", "JavaScript"],
-    current: true,
+    current: false,
   },
   {
-    period: "2022 — Present",
+    period: "Jul 2023 — nov 2023",
+    role: "Data Analyst Intern",
+    company: "TANESCO (Tanzania Electric Supply Company)",
+    description:
+      "Worked on data analysis projects focused on customer service operations. Analyzed customers with delayed or incomplete payments, identified trends affecting service access, and delivered insights to support operational decision-making.",
+    technologies: ["Python", "SQL", "Excel", "Power BI", "Data Analysis"],
+    current: false,
+  },
+
+  {
+    period: "jun 2025 — Present",
     role: "Data Science & Machine Learning Projects",
     company: "Academic & Personal Projects (Zindi, Coursework)",
     description:
@@ -39,7 +40,7 @@ const experiences = [
       "Machine Learning",
       "Zindi",
     ],
-    current: false,
+    current: true,
   },
 ];
 
