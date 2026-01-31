@@ -3,6 +3,14 @@ import { ArrowUpRight, Github, FolderKanban, Database, Brain, TrendingUp } from 
 /* Projects – Data Analyst first, ML & Full-Stack supported */
 const projects = [
   {
+    title: "AI Course Generator",
+    description: "A mobile-first app that lets users generate custom courses on any topic using Gemini AI, powered by Firebase for authentication, data storage, and user progress tracking.",
+    image: "/projects/ai-course-generator.png",
+    tags: ["React Native", "Expo", "Gemini AI", "Firebase", "Mobile"],
+    link: "#",
+    github: "https://github.com/EngIbrah/AI-Course-generator",
+  },
+  {
     title: "Mental Health AI-Powered Assistant",
     description: "AI-powered assistant that analyzes user input, delivers intelligent mental health insights, and supports therapist booking through a full-stack web platform.",
     image: "/projects/mindcare.png",
@@ -77,28 +85,18 @@ export const Projects = () => {
           </div>
         </div>
 
-        {/* Projects Grid with Better Images */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Projects Grid with Full Images */}
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 hover:shadow-sm transition-all duration-300"
-            >
-              {/* Image Container - Fixed for consistency */}
-              <div className="relative h-56 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                {/* Fallback gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 to-teal-50/20" />
-                
-                {/* Project Image */}
+            <div key={idx} className="group">
+              {/* Image Card - Independent */}
+              <div className="relative rounded-lg overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 mb-4">
+                {/* Full Project Image - No cropping but limited height */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="relative w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-auto max-h-64 object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.previousElementSibling.style.opacity = '1';
-                  }}
                 />
                 
                 {/* GitHub Link */}
@@ -115,26 +113,26 @@ export const Projects = () => {
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
                   <div className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-md text-xs font-medium text-gray-700 shadow-sm">
-                    {idx === 0 ? "AI/ML" : idx === 1 ? "Data Analysis" : idx === 2 ? "Data Viz" : "ML Challenge"}
+                    {idx === 0 ? "AI/Mobile" : idx === 1 ? "AI/ML" : idx === 2 ? "Data Analysis" : idx === 3 ? "Data Viz" : "ML Challenge"}
                   </div>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-5">
+              {/* Description Card - Independent */}
+              <div className="bg-white border border-gray-200 rounded-lg p-5 hover:border-blue-300 transition-colors duration-300">
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-1">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tags.slice(0, 4).map((tag, tagIdx) => (
+                  {project.tags.slice(0, 5).map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
                       className="px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-md border border-gray-200 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-colors duration-200"
@@ -142,9 +140,9 @@ export const Projects = () => {
                       {tag}
                     </span>
                   ))}
-                  {project.tags.length > 4 && (
+                  {project.tags.length > 5 && (
                     <span className="px-2.5 py-1 text-xs text-gray-500 bg-gray-100 rounded-md">
-                      +{project.tags.length - 4}
+                      +{project.tags.length - 5}
                     </span>
                   )}
                 </div>
@@ -155,7 +153,7 @@ export const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-gray-700 hover:text-blue-600 transition-colors duration-300"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300"
                   >
                     <Github className="w-4 h-4" />
                     <span>View Code</span>
@@ -166,7 +164,7 @@ export const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-gray-700 hover:text-blue-600 transition-colors duration-300"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300"
                     >
                       <span>Live Demo</span>
                       <ArrowUpRight className="w-4 h-4" />
