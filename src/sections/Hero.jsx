@@ -1,29 +1,29 @@
 import { Button } from "@/components/Button";
-import { ArrowRight, ChevronDown, Github, Linkedin, Download, Sparkles, Code, Database, Cpu } from "lucide-react";
+import { ArrowRight, ChevronDown, Github, Linkedin, Download, Sparkles, Code, Database, Cpu, Terminal } from "lucide-react";
 
 const skills = [
-  "React.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL",
-  "Python", "SQL", "Tailwind CSS", "TypeScript", "Git", "Next.js",
-  "FastAPI", "Docker", "AWS", "Data Analysis", "Machine Learning"
+  "Python", "SQL", "OOP", "Data Structures", "TypeScript", 
+  "React.js", "Node.js", "PostgreSQL", "MongoDB", "Git", 
+  "FastAPI", "Next.js", "Docker", "AWS", "Machine Learning"
 ];
 
 const expertiseAreas = [
   {
-    title: "Frontend Development",
-    description: "React, Next.js, TypeScript",
-    icon: Code,
+    title: "Software Engineering",
+    description: "OOP, Data Structures, Algorithms",
+    icon: Terminal, 
     color: "text-blue-600"
   },
   {
-    title: "Backend & APIs",
-    description: "Node.js, Python, REST/GraphQL",
-    icon: Database,
+    title: "Full-Stack Dev",
+    description: "React, Node.js, Next.js",
+    icon: Code,
     color: "text-teal-600"
   },
   {
-    title: "Data & AI",
-    description: "Python, SQL, ML Models",
-    icon: Cpu,
+    title: "Data & Databases",
+    description: "SQL, PostgreSQL, ML Models",
+    icon: Database,
     color: "text-purple-600"
   }
 ];
@@ -43,7 +43,7 @@ export const Hero = () => {
             {/* Value Proposition Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-sm font-medium text-blue-700 animate-fade-in-up">
               <Sparkles className="w-4 h-4" />
-              Full-Stack Developer • Data-Driven Solutions
+              Computer Engineering '26 • Software Developer
             </div>
 
             {/* Headline with Personal Branding */}
@@ -56,17 +56,17 @@ export const Hero = () => {
               </h1>
               
               <h2 className="text-2xl md:text-3xl text-gray-600 font-semibold animate-fade-in-up animation-delay-200">
-                Building <span className="text-blue-600">scalable web apps</span> &{" "}
-                <span className="text-teal-600">data solutions</span>
+                Engineering <span className="text-blue-600">scalable software</span> &{" "}
+                <span className="text-teal-600">intelligent systems</span>
               </h2>
             </div>
 
             {/* Professional Summary */}
             <p className="text-lg text-gray-600 max-w-xl leading-relaxed animate-fade-in-up animation-delay-300">
-              I specialize in creating full-stack applications with React/Node.js 
-              and developing data-driven solutions with Python. Focused on 
-              building products that are not just functional, but scalable, 
-              maintainable, and deliver real business value.
+              I specialize in building robust full-stack applications and 
+              data-driven solutions. With a focus on <span className="font-semibold text-gray-900 text-blue-600">Object-Oriented Programming</span> and 
+              <span className="font-semibold text-gray-900 text-teal-600"> SQL Database Management</span>, I build products that are functional, 
+              scalable, and maintainable.
             </p>
 
             {/* Expertise Areas */}
@@ -146,43 +146,38 @@ export const Hero = () => {
           {/* RIGHT: Profile Card */}
           <div className="relative animate-fade-in">
             <div className="relative max-w-md mx-auto">
-              {/* Main Profile Card */}
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 hover:shadow-md transition-shadow duration-300">
-                {/* Profile Image with subtle accent */}
                 <div className="relative w-32 h-32 mx-auto">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-100 to-teal-100 animate-pulse-subtle" />
                   <img
                     src="/profile-1.jpg"
-                    alt="Ibrahim Ndagiwe - Full-Stack Developer"
+                    alt="Ibrahim Ndagiwe - Software Developer"
                     className="relative w-full h-full rounded-full object-cover border-4 border-white shadow-md"
                   />
                 </div>
 
-                {/* Name & Role */}
                 <div className="text-center mt-6 space-y-1">
                   <h3 className="text-2xl font-bold text-gray-900">
                     Ibrahim Ndagiwe
                   </h3>
                   <p className="text-gray-600">
-                    Full-Stack & Data Developer
+                    Computer Engineering Student
                   </p>
                 </div>
 
-                {/* Current Focus */}
                 <div className="mt-6 p-4 rounded-lg bg-blue-50 border border-blue-100">
                   <div className="flex items-center gap-2 text-blue-700 text-sm font-medium mb-1">
                     <Sparkles className="w-4 h-4" />
-                    Currently Focused On
+                    Top 30% Rank
                   </div>
                   <p className="text-sm text-gray-600">
-                    Building scalable MERN applications & data pipelines with Python
+                    Ranked in Top 30% of Zindi's Financial Health Challenge.
                   </p>
                 </div>
 
-                {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-100">
                   {[
-                    { value: "3+", label: "Years Experience", color: "text-blue-600" },
+                    { value: "Zindi", label: "Ranked", color: "text-blue-600" },
                     { value: "20+", label: "Projects", color: "text-teal-600" },
                     { value: "Full", label: "Stack", color: "text-purple-600" },
                   ].map((stat, idx) => (
@@ -196,21 +191,20 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating Skill Elements */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl rotate-6 opacity-10" />
               <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-tr from-purple-500 to-pink-500 rounded-full -rotate-12 opacity-10" />
             </div>
           </div>
         </div>
 
-        {/* Skills Section - Refined */}
+        {/* Skills Section - Refined with Job Requirements */}
         <div className="mt-24 animate-fade-in-up animation-delay-700">
           <div className="text-center mb-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              Technologies I Build With
+              Core Technical Stack
             </h3>
             <p className="text-gray-500 max-w-lg mx-auto">
-              Proficient in modern web technologies, databases, and data tools
+              Focusing on Object-Oriented Programming, Data Structures, and Relational Databases.
             </p>
           </div>
           
@@ -218,8 +212,7 @@ export const Hero = () => {
             {skills.map((skill, idx) => (
               <span
                 key={idx}
-                className="skill-badge hover-lift"
-                style={{ animationDelay: `${idx * 30}ms` }}
+                className="px-4 py-2 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-600 hover:border-blue-600 hover:text-blue-600 transition-all cursor-default"
               >
                 {skill}
               </span>
@@ -228,12 +221,10 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator - Minimal */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in">
         <a
           href="#about"
           className="flex flex-col items-center gap-1 text-gray-400 hover:text-blue-600 transition-colors"
-          aria-label="Scroll to next section"
         >
           <span className="text-xs uppercase tracking-wider font-medium">
             Explore

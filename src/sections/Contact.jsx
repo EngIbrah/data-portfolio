@@ -1,6 +1,6 @@
 import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
-import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle } from "lucide-react";
+import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle, ExternalLink, Linkedin } from "lucide-react";
 
 export const Contact = () => {
   const formRef = useRef();
@@ -33,169 +33,138 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-24 bg-white relative overflow-hidden">
+      {/* Background Decorative Element */}
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50/40 rounded-full blur-[100px] -z-10" />
+      
       <div className="container mx-auto px-6">
-        {/* Header */}
-        <div className="max-w-3xl mx-auto mb-12 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-sm font-medium text-blue-700 mb-4">
-            <Mail className="w-4 h-4" />
-            Let's Connect
-          </div>
+        <div className="max-w-6xl mx-auto">
           
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Get In Touch
-            <span className="block text-gradient bg-gradient-to-r from-blue-600 to-teal-500">
-              Start A Conversation
-            </span>
-          </h2>
-          
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Have a project in mind or want to discuss opportunities? Feel free to reach out.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Contact Info Cards */}
-          <div className="space-y-6">
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-sm transition-all duration-300">
-              <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
-                <Mail className="w-6 h-6 text-blue-600" />
+          <div className="grid lg:grid-cols-5 gap-16">
+            
+            {/* Column 1: Text & Info */}
+            <div className="lg:col-span-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-6">
+                <Mail className="w-3.5 h-3.5" />
+                Contact Engineering
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-              <a 
-                href="mailto:ibrahim@example.com" 
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                ibrahndagiwe99@gmail.com
-              </a>
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Let's Build Something <span className="text-blue-600">Exceptional</span>
+              </h2>
+              
+              <p className="text-gray-500 mb-12 text-lg leading-relaxed">
+                Whether you have a specific project in mind or just want to discuss the future of Data & AI, my inbox is always open.
+              </p>
+
+              <div className="space-y-6">
+                {[
+                  { icon: Mail, label: "Email", value: "ibrahndagiwe99@gmail.com", href: "mailto:ibrahndagiwe99@gmail.com" },
+                  { icon: Phone, label: "Phone", value: "+255 748 412 022", href: "tel:+255748412022" },
+                  { icon: MapPin, label: "Location", value: "Tanzania", href: "#" }
+                ].map((item, i) => (
+                  <a 
+                    key={i} 
+                    href={item.href}
+                    className="flex items-center gap-4 group p-4 rounded-2xl border border-transparent hover:border-gray-100 hover:bg-gray-50/50 transition-all"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <item.icon className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">{item.label}</p>
+                      <p className="text-gray-900 font-semibold">{item.value}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              <div className="mt-12 p-6 rounded-[2rem] bg-gray-900 text-white relative overflow-hidden group">
+                <div className="relative z-10">
+                   <p className="text-sm font-medium text-gray-400 mb-2">Direct Networking</p>
+                   <h4 className="text-xl font-bold mb-4">Connect on LinkedIn</h4>
+                   <a 
+                    href="https://www.linkedin.com/in/ibrahim-ndagiwe/" 
+                    target="_blank" 
+                    className="inline-flex items-center gap-2 bg-blue-600 px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-500 transition-colors"
+                   >
+                     Visit Profile <Linkedin className="w-4 h-4" />
+                   </a>
+                </div>
+                <Linkedin className="absolute -bottom-4 -right-4 w-32 h-32 text-white/5 group-hover:rotate-12 transition-transform duration-700" />
+              </div>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-sm transition-all duration-300">
-              <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
-                <Phone className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
-              <p className="text-gray-600">+255748412022</p>
-            </div>
+            {/* Column 2: The Form Card */}
+            <div className="lg:col-span-3">
+              <div className="bg-white rounded-[2.5rem] border border-gray-200 p-8 md:p-10 shadow-2xl shadow-blue-900/5 relative">
+                
+                <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-gray-500 ml-1">Identity</label>
+                      <input
+                        name="from_name"
+                        placeholder="Your Name"
+                        required
+                        className="w-full px-6 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-gray-500 ml-1">Email Address</label>
+                      <input
+                        name="from_email"
+                        type="email"
+                        placeholder="email@example.com"
+                        required
+                        className="w-full px-6 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none"
+                      />
+                    </div>
+                  </div>
 
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-sm transition-all duration-300">
-              <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
-                <MapPin className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Location</h3>
-              <p className="text-gray-600">Tanzania</p>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="md:col-span-2">
-            <div className="bg-white border border-gray-200 rounded-xl p-6 md:p-8">
-              <form
-                ref={formRef}
-                onSubmit={sendEmail}
-                className="space-y-6"
-              >
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Your Name
-                    </label>
-                    <input
-                      id="name"
-                      name="from_name"
-                      placeholder="Enter your name"
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500 ml-1">Mission Brief</label>
+                    <textarea
+                      name="message"
+                      rows="5"
+                      placeholder="Tell me about your project or opportunity..."
                       required
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all duration-300"
+                      className="w-full px-6 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none resize-none"
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Your Email
-                    </label>
-                    <input
-                      id="email"
-                      name="from_email"
-                      type="email"
-                      placeholder="Enter your email"
-                      required
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all duration-300"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    placeholder="Tell me about your project or opportunity..."
-                    required
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all duration-300 resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full md:w-auto px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? (
-                    <>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 disabled:opacity-70 shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-3 group"
+                  >
+                    {isSubmitting ? (
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      Send Message
-                    </>
-                  )}
-                </button>
-
-                {status && (
-                  <div className={`p-4 rounded-lg border flex items-start gap-3 ${
-                    status.includes("successfully") 
-                      ? "bg-green-50 border-green-200 text-green-700" 
-                      : "bg-red-50 border-red-200 text-red-700"
-                  }`}>
-                    {status.includes("successfully") ? (
-                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                     ) : (
-                      <AlertCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <>
+                        <span>Initiate Conversation</span>
+                        <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      </>
                     )}
-                    <p className="text-sm">{status}</p>
-                  </div>
-                )}
-              </form>
+                  </button>
 
-              {/* Privacy Note */}
-              <div className="mt-8 pt-6 border-t border-gray-100">
-                <p className="text-xs text-gray-500 text-center">
-                  Your information is secure. I'll respond within 24 hours.
+                  {status && (
+                    <div className={`p-4 rounded-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${
+                      status.includes("successfully") ? "bg-green-50 border-green-100 text-green-700" : "bg-red-50 border-red-100 text-red-700"
+                    }`}>
+                      {status.includes("successfully") ? <CheckCircle className="w-5 h-5" /> : <AlertCircle className="w-5 h-5" />}
+                      <p className="text-sm font-medium">{status}</p>
+                    </div>
+                  )}
+                </form>
+
+                <p className="mt-8 text-center text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">
+                  Response Latency: ~24 Hours
                 </p>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-2">
-            Prefer a more direct approach?
-          </p>
-          <a
-            href="https://www.linkedin.com/in/ibrahim-ndagiwe/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
-          >
-            Connect with me on LinkedIn
-            <Send className="w-4 h-4" />
-          </a>
+          </div>
         </div>
       </div>
     </section>
